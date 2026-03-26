@@ -1,0 +1,236 @@
+/* === ADMIN DASHBOARD THEME (Control Room) === */
+
+:root {
+    --admin-sidebar-bg: #003366; /* IRCTC Blue */
+    --admin-sidebar-hover: #004080;
+    --admin-accent: #fb792b;     /* IRCTC Orange */
+    --admin-bg: #f3f6f9;         /* Light Grey Background */
+    --glass-white: rgba(255, 255, 255, 0.95);
+    --shadow-soft: 0 4px 20px rgba(0,0,0,0.05);
+    --shadow-hover: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+body {
+    background-color: var(--admin-bg);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+}
+
+/* === 1. SIDEBAR STYLES === */
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: var(--admin-sidebar-bg);
+    color: white;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+    /* Subtle Pattern Overlay */
+    background-image: linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.03) 50%, rgba(255,255,255,0.03) 75%, transparent 75%, transparent);
+    background-size: 40px 40px;
+    z-index: 1000;
+}
+
+.sidebar-brand {
+    padding: 25px 20px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border-left: 4px solid transparent;
+}
+
+.sidebar-menu li a:hover, .sidebar-menu li a.active {
+    background-color: var(--admin-sidebar-hover);
+    color: white;
+    border-left-color: var(--admin-accent);
+}
+
+.sidebar-menu li a i {
+    margin-right: 15px;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* === 2. MAIN CONTENT AREA === */
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    width: calc(100% - 260px); /* Fill remaining space */
+}
+
+.page-header {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+}
+
+/* === 3. STATS CARDS (Pulse Effect) === */
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.stat-icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 3rem;
+    opacity: 0.1;
+    transform: rotate(15deg);
+}
+
+.stat-val {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: var(--admin-sidebar-bg);
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Gradients for Specific Cards */
+.card-revenue { border-bottom: 4px solid #1cc88a; }
+.card-users { border-bottom: 4px solid #4e73df; }
+.card-blocked { border-bottom: 4px solid #e74a3b; }
+.card-trains { border-bottom: 4px solid #f6c23e; }
+
+/* === 4. FLOATING TABLES === */
+.admin-table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    padding: 20px;
+    border: none;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Space between rows */
+}
+
+.admin-table thead th {
+    border: none;
+    color: #888;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    padding: 10px 20px;
+}
+
+.admin-table tbody tr {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    transition: transform 0.2s;
+}
+
+.admin-table tbody tr:hover {
+    transform: scale(1.01);
+    background-color: #fcfcfc;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.admin-table td {
+    padding: 15px 20px;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+}
+
+.admin-table td:first-child {
+    border-left: 1px solid #f0f0f0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.admin-table td:last-child {
+    border-right: 1px solid #f0f0f0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* === 5. ACTION BUTTONS === */
+.btn-action-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition: all 0.2s;
+    margin-right: 5px;
+    color: white;
+}
+
+.btn-icon-edit { background: #36b9cc; }
+.btn-icon-edit:hover { background: #2c9faf; }
+
+.btn-icon-block { background: #f6c23e; color: #333; }
+.btn-icon-block:hover { background: #dda20a; }
+
+.btn-icon-delete { background: #e74a3b; }
+.btn-icon-delete:hover { background: #be2617; transform: rotate(10deg); }
+
+.btn-icon-unblock { background: #1cc88a; }
+.btn-icon-unblock:hover { background: #17a673; }
+
+/* === 6. ANIMATIONS === */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-entry {
+    animation: slideIn 0.5s ease-out forwards;
+}

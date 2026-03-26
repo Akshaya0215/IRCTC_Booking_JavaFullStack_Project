@@ -1,0 +1,233 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../assets/images/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    padding-top: 80px;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* === IRCTC THEME COLORS === */
+:root {
+    --irctc-blue: #003366;
+    --irctc-orange: #fb792b;
+    --irctc-light-bg: #f5f8fb;
+}
+
+.bg-irctc {
+    background-color: var(--irctc-blue) !important;
+    color: white !important;
+}
+
+.text-irctc {
+    color: var(--irctc-blue) !important;
+}
+
+/* Navbar Customization */
+.navbar-custom {
+    background-color: #ffffff !important; /* White background */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Softer shadow for white */
+    padding-top: 12px !important;    /* Increased height */
+    padding-bottom: 12px !important; /* Increased height */
+}
+.navbar-custom .navbar-brand {
+    color: var(--irctc-blue) !important; /* Official blue logo text */
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+.navbar-custom .nav-link {
+    color: var(--irctc-blue) !important; /* Dark blue links */
+    font-weight: 600;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+.navbar-custom .nav-link:hover {
+    color: var(--irctc-orange) !important; /* Orange on hover */
+    text-decoration: underline !important; /* Underline on hover */
+}
+.navbar-custom .navbar-welcome {
+    color: #555 !important; /* Dark grey for welcome text */
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+.navbar-brand img {
+    height: 35px; /* Slightly larger logo to match new height */
+    margin-right: 10px;
+}
+/* Main container for centering content */
+.main-container {
+    padding: 20px;
+}
+
+/* Card style for forms and content blocks */
+.card-form {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Slightly deeper shadow */
+    margin-top: 20px;
+    max-width: 600px;
+    margin-left: 0;
+    border-top: 5px solid var(--irctc-orange); /* Add orange top border for branding */
+}
+.card-form h2 {
+    text-align: center;
+    color: var(--irctc-blue);
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+/* Button Styles */
+.btn-orange {
+    background-color: var(--irctc-orange) !important;
+    border-color: var(--irctc-orange) !important;
+    color: white !important;
+    padding: 10px 15px;
+    font-size: 1.1rem; /* Slightly larger font */
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.btn-orange:hover {
+    background-color: #e06820 !important;
+    border-color: #e06820 !important;
+    transform: translateY(-2px); /* Slight lift effect on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Table Styles */
+.table {
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: white;
+}
+.table thead th {
+    background-color: var(--irctc-blue); /* Dark blue headers */
+    color: white;
+    border-color: #002244;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; position: fixed; z-index: 1050; left: 0; top: 0;
+    width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);
+}
+.modal-content {
+    background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888;
+    width: 80%; max-width: 400px; text-align: center; border-radius: 8px; position: relative;
+}
+.close-button {
+    color: #aaa; position: absolute; top: 10px; right: 20px; font-size: 28px;
+    font-weight: bold; cursor: pointer;
+}
+.close-button:hover, .close-button:focus { color: black; text-decoration: none; }
+.modal-content a.btn { margin-top: 15px; }
+
+/* Error/Success Messages */
+.message { padding: 10px; border-radius: 4px; margin-bottom: 15px; border: 1px solid transparent; }
+.success-message { color: #155724; background-color: #d4edda; border-color: #c3e6cb; }
+.error-message { color: #721c24; background-color: #f8d7da; border-color: #f5c6cb; }
+
+/* === BOOKING HISTORY STYLES === */
+.booking-card {
+    background-color: white;
+    border: none; /* Remove default border */
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Better shadow */
+    max-width: 900px;
+    margin-left: 0;
+    overflow: hidden; /* Ensures child elements don't break rounded corners */
+}
+.booking-header {
+    background-color: var(--irctc-blue); /* Dark blue header */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.booking-header h5 {
+    margin: 0;
+    color: white; /* White text on dark blue */
+    margin-bottom: 5px;
+}
+.booking-body {
+    padding: 20px;
+    background-color: var(--irctc-light-bg); /* Very light blue/gray background */
+}
+.booking-body .route {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--irctc-blue);
+}
+.status-CONFIRMED { color: #28a745; font-weight: bold; }
+.status-PENDING { color: #ffc107; font-weight: bold; }
+.status-CANCELLED { color: #dc3545; font-weight: bold; }
+
+.booking-footer {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+.booking-info p { margin-bottom: 0.5rem; }
+.booking-info strong { display: inline-block; min-width: 120px; color: #555; }
+
+/* === BOOKING PAGE STYLES === */
+.booking-summary {
+    background-color: var(--irctc-light-bg);
+    border-left: 5px solid var(--irctc-blue); /* Blue accent border */
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.booking-summary h3 {
+    margin-top: 0;
+    color: var(--irctc-blue);
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+.fare-details {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--irctc-blue);
+    margin-top: 15px;
+}
+.passenger-form {
+    border: 1px solid #e0e0e0;
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.passenger-form h5 {
+    color: var(--irctc-orange);
+    border-bottom: 2px solid var(--irctc-light-bg);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+/* === GLOBAL: HIDE SCROLLBAR (App-Like Feel) === */
+
+/* For Chrome, Safari, and Opera */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* For Firefox, IE, and Edge */
+html, body {
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
