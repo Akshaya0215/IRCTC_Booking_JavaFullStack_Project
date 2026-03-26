@@ -11,7 +11,7 @@ A full-featured **Railway Ticket Booking Web Application** inspired by IRCTC, bu
 - 💺 **Seat Selection** — Interactive seat selection with real-time availability
 - 💳 **Stripe Payment** — Online payment integration (test mode)
 - 🎫 **PDF Ticket Generation** — Auto-generated ticket with booking details sent via email
-- 🤖 **ChatGPT Chatbot** — AI-powered chatbot with database context for user queries
+- 🤖 **Gemini Chatbot** — AI-powered chatbot with database context for user queries
 - 📍 **Live Train Tracking** — Real-time train location via third-party API
 - 📧 **Email Notifications** — Booking confirmation sent to user email
 
@@ -25,7 +25,7 @@ A full-featured **Railway Ticket Booking Web Application** inspired by IRCTC, bu
 | **Backend** | Java, J2EE, Servlets |
 | **Database** | MySQL, JDBC |
 | **Payment** | Stripe API (Test Mode) |
-| **AI Chatbot** | ChatGPT API |
+| **AI Chatbot** | Gemini API |
 | **Live Tracking** | Third-party Train API |
 | **PDF Generation** | iText / Apache PDFBox |
 | **Email** | JavaMail API |
